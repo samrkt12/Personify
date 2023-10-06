@@ -2,6 +2,7 @@ import NavBar from "@/components/NavBar";
 import "./globals.css";
 import { Poppins } from "next/font/google";
 import Toast from "@/components/Toast";
+import Pwa from "@/components/Pwa";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
         <Toast />
         <NavBar />
         {children}
+        <Pwa />
       </body>
     </html>
   );
