@@ -3,7 +3,7 @@ import React from "react";
 import { notFound } from "next/navigation";
 
 async function getData(id) {
-  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/person/${id}`, {
+  const res = await fetch(`${process.env.NEXT_URL}/api/person/${id}`, {
     cache: "no-store",
   });
 
