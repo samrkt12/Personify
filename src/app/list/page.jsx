@@ -3,8 +3,8 @@ import React from "react";
 
 async function getData() {
   try {
-    const res = await fetch(`${process.env.NEXT_URL}/api/person`, {
-      cache: "no-store",
+    const res = await fetch(`https://personify-sage.vercel.app/api/person`, {
+      next: { revalidate: 60 },
     });
 
     if (!res.ok) {

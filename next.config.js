@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
-const withPWA = require("next-pwa")({
+
+const withPWA = require("@imbios/next-pwa")({
   dest: "public",
-  register: "true",
 });
 
 module.exports = withPWA({

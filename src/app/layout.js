@@ -13,6 +13,8 @@ export const metadata = {
   description: "PWA web app for your Contacts.",
   manifest: "/manifest.json",
   themeColor: "#191a19",
+  viewport:
+    "minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover",
 };
 
 export default function RootLayout({ children }) {
