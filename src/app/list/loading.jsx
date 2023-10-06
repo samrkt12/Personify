@@ -11,7 +11,7 @@ const LoadingSkeleton = () => {
           {[1, 2, 3, 4].map((index) => (
             <div
               key={index}
-              className="w-[200px] md:w-[300px] px-4 md:px-6 py-4 drop-shadow-xl rounded-md shadow-xl bg-[rgba(255,255,255,0.085)] relative animate-pulse-fast h-[200px]"
+              className="w-[168px] md:w-[300px] px-4 md:px-6 py-4 drop-shadow-xl rounded-md shadow-xl bg-[rgba(255,255,255,0.085)] relative animate-pulse-fast h-[172px]"
             ></div>
           ))}
         </div>
