@@ -22,7 +22,7 @@ const PersonEdit = ({ personData }) => {
     gsap.fromTo(
       animatedDivRef.current,
       {
-        y: -75,
+        y: -100,
         opacity: 0,
       },
       {
@@ -57,22 +57,21 @@ const PersonEdit = ({ personData }) => {
 
   return (
     <div className="h-screen mb-6  py-20 md:pt-8  mx-auto flex justify-center items-center">
-      <div
-        className="px-6 py-6 md:px-12 md:py-12 mt-16 rounded-lg shadow-xl drop-shadow-xl bg-[rgba(255,255,255,0.1)]"
-        ref={animatedDivRef}
-      >
-        <h1 className="text-xl md:text-3xl font-semibold mb-6 md:mb-12 text-center underline">
-          Edit details
-        </h1>
-        <PersonForm
-          register={register}
-          onSubmit={handleSubmit(editPersonHandler)}
-          errors={errors}
-          control={control}
-          loading={loading}
-          personData={personData}
-          Controller={Controller}
-        />
+      <div className="px-6 py-6 md:px-12 md:py-12 mt-16 rounded-lg shadow-xl drop-shadow-xl bg-[rgba(255,255,255,0.1)]">
+        <div ref={animatedDivRef}>
+          <h1 className="text-xl md:text-3xl font-semibold mb-6 md:mb-12 text-center underline">
+            Edit details
+          </h1>
+          <PersonForm
+            register={register}
+            onSubmit={handleSubmit(editPersonHandler)}
+            errors={errors}
+            control={control}
+            loading={loading}
+            personData={personData}
+            Controller={Controller}
+          />
+        </div>
       </div>
     </div>
   );

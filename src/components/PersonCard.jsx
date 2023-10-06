@@ -45,7 +45,7 @@ const PersonCard = ({
   useEffect(() => {
     if (isInView) {
       gsap.fromTo(
-        [cardRef.current, contentRef.current, buttonsRef.current],
+        [contentRef.current, buttonsRef.current],
         {
           opacity: 0,
           x: -40,

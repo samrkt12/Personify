@@ -4,7 +4,7 @@ import React from "react";
 async function getData() {
   try {
     const res = await fetch(`https://personify-sage.vercel.app/api/person`, {
-      next: { revalidate: 60 },
+      cache: "no-store",
     });
 
     if (!res.ok) {
