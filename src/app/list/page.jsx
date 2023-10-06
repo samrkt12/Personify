@@ -4,7 +4,7 @@ import React from "react";
 async function getData() {
   try {
     const res = await fetch(`${process.env.NEXT_URL}/api/person`, {
-      next: { revalidate: 3600 },
+      cache: "no-store",
     });
 
     if (!res.ok) {
