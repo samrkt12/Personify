@@ -3,7 +3,7 @@ import React from "react";
 
 async function getData() {
   try {
-    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/person`, {
+    const res = await fetch(`${process.env.NEXT_URL}/api/person`, {
       cache: "no-store",
     });
 
@@ -26,9 +26,10 @@ const List = async () => {
           People List
         </h1>
         <div className="flex flex-wrap justify-center gap-4 md:gap-x-12 md:gap-y-12 ">
-          {peopleData.map((person) => (
-            <PersonCard key={person._id} {...person} />
-          ))}
+          {peopleData &&
+            peopleData.map((person) => (
+              <PersonCard key={person._id} {...person} />
+            ))}
         </div>
       </div>
     </div>
