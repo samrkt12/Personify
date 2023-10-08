@@ -4,34 +4,40 @@ import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 
 const NavBar = () => {
-  const [color, setColor] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
-  const changeColorHandler = () => {
-    if (window.scrollY >= 10) setColor(true);
-    else setColor(false);
-  };
-
   useEffect(() => {
-    window.addEventListener("scroll", changeColorHandler);
+    const handleScroll = () => {
+      if (window.scrollY > 5) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
+
   return (
     <header
-      className={`border-b-[1px] border-b-amber-900 fixed left-0 top-0 w-full z-10 transition-all duration-300 ${
-        color
-          ? "bg-[rgba(35,35,35,0.95)] h-[50px] md:h-[55px]"
-          : "bg-transparent h-[60px] md:h-[70px]"
-      }`}
+      className={`fixed left-0 top-0 w-full z-10 uppercase bg-[#a28089] transition-all duration-400 shadow-md ${
+        isScrolled
+          ? " h-[30px] md:h-[38px] shadow-md"
+          : " h-[60px] md:h-[70px] shadow-none"
+      } `}
     >
       <nav className="max-w-[1366px] h-full mx-auto flex justify-center items-center p-4">
-        <ul className="flex w-full justify-around md:justify-center md:space-x-32 text-xl md:text-2xl">
+        <ul className="flex w-full justify-around md:justify-center md:space-x-32 text-xl md:text-2xl font-semibold tracking-widest transition duration-500">
           <li>
             <Link
               href="/"
               className={
                 pathname === "/"
-                  ? "text-blue-500  tracking-wider"
-                  : " tracking-wider"
+                  ? "text-white  tracking-widest"
+                  : " tracking-widest"
               }
             >
               Home
@@ -42,8 +48,8 @@ const NavBar = () => {
               href="/list"
               className={
                 pathname === "/list"
-                  ? "text-blue-500  tracking-wider"
-                  : " tracking-wider"
+                  ? "text-white  tracking-widest "
+                  : " tracking-widest"
               }
             >
               List
@@ -54,8 +60,8 @@ const NavBar = () => {
               href="/add"
               className={
                 pathname === "/add"
-                  ? "text-blue-500 tracking-wider"
-                  : " tracking-wider"
+                  ? "text-white tracking-widest"
+                  : " tracking-widest"
               }
             >
               Add

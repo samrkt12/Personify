@@ -6,7 +6,7 @@ import Pwa from "@/components/Pwa";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata = {

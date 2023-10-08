@@ -92,7 +92,7 @@ const PersonCard = ({
     >
       <div ref={contentRef}>
         <h2
-          className=" text-lg md:text-xl mb-1 font-semibold"
+          className=" text-lg md:text-xl mb-1 font-semibold tracking-wide md:tracking-wider"
           ref={nameRef}
         >{`${firstName} ${lastName}`}</h2>
         <p className="text-sm md:text-base mb-1" ref={emailRef}>
@@ -108,12 +108,12 @@ const PersonCard = ({
 
       <div className="pt-8 flex " ref={buttonsRef}>
         <Link href={`/list/${_id}`}>
-          <button className="text-blue-400 text-base  mr-4 hover:underline transition duration-300 tracking-wider">
+          <button className="bg-[#edf7f6] outline-none   text-[#333333] px-3 py-1  md:text-base rounded-md hover:bg-[#333] font-semibold hover:text-[#edf7f6] tracking-wider uppercase transition duration-300  text-sm  mr-4 ">
             Edit
           </button>
         </Link>
         <button
-          className="text-red-400 text-base  hover:underline transition duration-300 tracking-wider"
+          className="bg-[#edf7f6] outline-none   text-[#333333] px-3 py-1  md:text-base rounded-md hover:bg-[#333] font-semibold hover:text-[#edf7f6] tracking-wider uppercase transition duration-300  text-sm  mr-4 "
           onClick={handleDelete}
         >
           Delete

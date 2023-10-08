@@ -58,8 +58,8 @@ const PersonAdd = () => {
     <div className="h-screen mb:0 mt-16 py-20 md:pt-8 mx-auto flex justify-center items-center">
       <div className=" px-6 py-6 md:px-12 md:py-12 rounded-lg shadow-xl drop-shadow-xl bg-[rgba(255,255,255,0.1)]">
         <div ref={animatedDivRef}>
-          <h1 className="text-2xl md:text-3xl font-semibold mb-6 md:mb-12 text-center underline">
-            Add New Person
+          <h1 className="text-2xl md:text-3xl font-semibold mb-6 md:mb-12 text-center uppercase tracking-[8px] flex justify-center items-center">
+            <span className="pl-2 mr-4 md:text-4xl">Add</span> New Person
           </h1>
           <PersonForm
             register={register}

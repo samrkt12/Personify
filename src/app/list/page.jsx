@@ -22,9 +22,12 @@ const List = async () => {
   return (
     <div className="h-screen mx-auto flex justify-center items-start">
       <div className="px-4 py-6 md:px-20 md:py-12 mt-12 rounded-lg">
-        <h1 className="mt-4 text-xl md:text-3xl font-semibold mb-6 md:mb-12 text-center underline">
-          People List
-        </h1>
+        <div className="w-fit px-6 py-3 rounded-lg shadow-xl mb-6 md:mb-12 drop-shadow-xl bg-[rgba(255,255,255,0.1)] mx-auto">
+          <h1 className=" text-xl md:text-3xl font-semibold  text-center uppercase tracking-[8px] flex items-center">
+            People
+            <span className="ml-4 pl-2  md:text-4xl">List</span>
+          </h1>
+        </div>
         <div className="flex flex-wrap justify-center gap-4 md:gap-x-12 md:gap-y-12 ">
           {peopleData &&
             peopleData.map((person) => (

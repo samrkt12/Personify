@@ -1,5 +1,12 @@
-import PersonHome from "@/components/PersonHome";
-
+import HomeFooter from "@/components/HomeFooter";
+import HomeText from "@/components/HomeText";
+import HomeHero from "@/components/HomeHero";
 export default function Home() {
-  return <PersonHome />;
+  return (
+    <>
+      <HomeHero />
+      <HomeText />
+      <HomeFooter />
+    </>
+  );
 }

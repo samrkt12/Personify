@@ -64,10 +64,10 @@ const PersonForm = ({
             defaultValue={personData && personData.firstName}
             placeholder="Enter your first name"
             {...register("firstName", firstNameValidate)}
-            className="outline-none  bg-transparent border-b-2 rounded-md p-2 focus:border-[#318ce7] hover:border-[#318ce7]/40 w-[250px]  transition duration-250 "
+            className="outline-none  bg-transparent border-b-2 placeholder-[#fff]/60 text-white border-black rounded-md p-2 focus:border-[#fff] hover:border-[#fff]/30 w-[250px]  transition duration-250 "
           />
           {errors.firstName && (
-            <p className="text-red-400 px-2 text-sm tracking-wider">
+            <p className="text-red-800 px-2 text-sm tracking-wider">
               {errors.firstName.message}
             </p>
           )}
@@ -83,10 +83,10 @@ const PersonForm = ({
             placeholder="Enter your last name"
             defaultValue={personData && personData.lastName}
             {...register("lastName", lastNameValidate)}
-            className="outline-none  bg-transparent border-b-2 rounded-md p-2 focus:border-[#318ce7] hover:border-[#318ce7]/40 w-[250px]  transition duration-250 "
+            className="outline-none  bg-transparent border-b-2 placeholder-[#fff]/60 text-white rounded-md p-2 border-black focus:border-[#fff] hover:border-[#fff]/30 w-[250px]  transition duration-250 "
           />
           {errors.lastName && (
-            <p className="text-red-400 px-2 text-sm  tracking-wider">
+            <p className="text-red-800 px-2 text-sm  tracking-wider">
               {errors.lastName.message}
             </p>
           )}
@@ -104,10 +104,10 @@ const PersonForm = ({
             defaultValue={personData && personData.email}
             placeholder="Enter your email"
             {...register("email", emailValidate)}
-            className="outline-none  bg-transparent  border-b-2 rounded-md p-2 focus:border-[#318ce7] hover:border-[#318ce7]/40 w-[250px]  transition duration-250 "
+            className="outline-none  bg-transparent  border-b-2 border-black text-white placeholder-[#fff]/60 rounded-md p-2 focus:border-[#fff] hover:border-[#fff]/30  w-[250px]  transition duration-250 "
           />
           {errors.email && (
-            <p className="text-red-400 px-2 text-sm  tracking-wider">
+            <p className="text-red-800 px-2 text-sm  tracking-wider">
               {errors.email.message}
             </p>
           )}
@@ -125,12 +125,12 @@ const PersonForm = ({
               placeholder="Enter 10 digit number"
               {...register("phone", phoneValidate)}
               mask="999-999-9999"
-              className="outline-none bg-transparent border-b-2 rounded-md p-2 pr-10 focus:border-[#318ce7] hover:border-[#318ce7]/40 w-[250px] transition duration-250"
+              className="outline-none bg-transparent border-b-2 border-black placeholder-[#fff]/60 rounded-md p-2 pr-10 focus:border-[#fff] hover:border-[#fff]/30  w-[250px] transition duration-250"
             />
             <button
               type="button"
               onClick={togglePhoneNumberVisibility}
-              className="absolute top-2 right-2 text-gray-500 focus:outline-none"
+              className="absolute top-2 right-2 focus:outline-none text-white "
               aria-label={
                 showPhoneNumber ? "Hide phone number" : "Show phone number"
               }
@@ -143,7 +143,7 @@ const PersonForm = ({
             </button>
           </div>
           {errors.phone && (
-            <p className="text-sm text-red-400 px-2  tracking-wider">
+            <p className="text-sm text-red-800 px-2  tracking-wider">
               {errors.phone.message}
             </p>
           )}
@@ -163,7 +163,7 @@ const PersonForm = ({
               <select
                 {...field}
                 id="state"
-                className="outline-none bg-[rgba(255,255,255,0.02)] hover:bg-[rgba(255,255,255,0.08)] cursor-pointer border-b-2 rounded-md p-2 focus:border-[#318ce7] hover:border-[#318ce7]/40 w-[250px] transition duration-300"
+                className="outline-none bg-[rgba(255,255,255,0.02)] hover:bg-[rgba(255,255,255,0.08)] cursor-pointer border-b-2 border-black placeholder-[#fff]/60  text-white rounded-md p-2 focus:border-[#fff] hover:border-[#fff]/30  w-[250px] transition duration-300"
                 onChange={(e) => {
                   setSelectedState(e.target.value);
                   field.onChange(e.target.value);
@@ -185,7 +185,7 @@ const PersonForm = ({
             )}
           />
           {errors.state && (
-            <p className="text-red-400 text-sm px-2  tracking-wider">
+            <p className="text-red-800 text-sm px-2  tracking-wider">
               State is required.
             </p>
           )}
@@ -204,9 +204,12 @@ const PersonForm = ({
               <select
                 {...field}
                 id="city"
-                className="outline-none bg-[rgba(255,255,255,0.02)] hover:bg-[rgba(255,255,255,0.08)] cursor-pointer border-b-2 rounded-md p-2 focus:border-[#318ce7] hover:border-[#318ce7]/40 w-[250px] transition duration-300"
+                className="outline-none bg-[rgba(255,255,255,0.02)] hover:bg-[rgba(255,255,255,0.08)] cursor-pointer border-b-2 rounded-md p-2 border-black placeholder-[#fff]/60  text-white  focus:border-[#fff] hover:border-[#fff]/30  w-[250px] transition duration-300"
               >
-                <option value="" className="bg-[rgba(36,36,36,0.9)]">
+                <option
+                  value=""
+                  className="bg-[rgba(36,36,36,0.9)] text-[#fff]/60"
+                >
                   {selectedState ? "Select City" : "Select State"}
                 </option>
                 {cities.map((cityName) => (
@@ -222,7 +225,7 @@ const PersonForm = ({
             )}
           />
           {errors.city && (
-            <p className="text-red-400 px-2 text-sm  tracking-wider">
+            <p className="text-red-800 px-2 text-sm  tracking-wider">
               City is required.
             </p>
           )}
@@ -233,7 +236,7 @@ const PersonForm = ({
           <Link href="/list">
             <button
               type="button"
-              className="bg-red-500 mt-4 w-fit md:w-[200px] text-white text-sm md:text-base py-2 px-4 rounded-md hover:bg-red-600 transition duration-300"
+              className="bg-[#edf7f6] w-fit md:w-[200px] text-[#333333] py-2 px-8 text-sm md:text-base rounded-md hover:bg-[#333]  font-semibold hover:text-[#edf7f6] tracking-wider uppercase transition duration-300 mt-4"
               disabled={loading}
             >
               Cancel
@@ -242,7 +245,7 @@ const PersonForm = ({
         )}
         <button
           type="submit"
-          className="bg-blue-700 w-fit md:w-[200px] text-white py-2 px-8 text-sm md:text-base rounded-md hover:bg-blue-600 transition duration-300 mt-4"
+          className="bg-[#edf7f6] w-fit md:w-[200px] text-[#333333] py-2 px-8 text-sm md:text-base rounded-md font-semibold hover:bg-[#333] hover:text-[#edf7f6] tracking-wider uppercase transition duration-300 mt-4"
           disabled={loading}
         >
           {loading ? (
